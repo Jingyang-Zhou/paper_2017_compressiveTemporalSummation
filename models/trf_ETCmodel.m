@@ -35,7 +35,6 @@ switch whichExp
     case 2, scaleVec(1 : 12) = scaleVec(1 : 12)*x.scale(1); scaleVec(1, 13 : end) = scaleVec(1, 13 : end)*x.scale(2);
 end
 
-
 %% compute response
 
 % compute irf

@@ -1,4 +1,4 @@
-function output = trf_2Chansmodel(params, stimulus, t)
+function output = trf_2chansModel(params, stimulus, t)
 
 % INPUTS : 
 % params have fields for two beta weights, b1 and b2, and a constant
@@ -14,7 +14,7 @@ normMax = @(x) x./max(x);
 
 normMin = @(x) x - mean(x(4000 : end));
 
-%% defualt parameters
+%% default parameters
 
 A = 3.29;
 B = 14;
@@ -30,23 +30,14 @@ c = 3.18;
 dt = 0.001;
 
 % make sustained channel impulse response
-
 t1   = t *(1./dt);
 firf = normMax(makeIRF(A, B, C, t1));
 
 % make transient channel impulse response
 pirf = normMax(makeIRF(a, b, c, t1));
-%pirf = normMax(pirf - mean(pirf));
-
-%% make irf figure
-
-figure (1), clf
-plot(t1, firf), hold on
-plot(t1, pirf), 
-xlim([0, 100]), box off
-
 
 %% compute neuronal and broadband response
+
 for k = 1 : size(stimulus, 1)
     if any(stimulus(k, :))
         fcomp(k, :)  = convCut(firf, stimulus(k, :), length(stimulus));
