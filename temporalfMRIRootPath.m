@@ -1,6 +1,6 @@
 function rootPath = temporalfMRIRootPath()
 
 rootPath = which('temporalfMRIRootPath');
-rootPath = fileparts(fileparts(rootPath));
+rootPath = fileparts(rootPath);
 
 end
