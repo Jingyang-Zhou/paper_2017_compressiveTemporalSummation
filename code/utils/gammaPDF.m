@@ -26,8 +26,8 @@ function y = gammaPDF(t,tau,n)
 %
 %  Something like an RGC impulse response.
 %
-%   t = 0:0.005:0.3; tau = .01; n = 3;
-%   c = gammaPDF(t,tau,n); plot(t,c)
+  t = 0:0.005:0.3; tau = .1; n = 2;
+  c = gammaPDF(t,tau,n); plot(t,c)
 %   tau = 0.02; n = 3; s = gammaPDF(t,tau,n); plot(t,s)
 %   plot(t,c - 0.9*s)
 %   grid on
