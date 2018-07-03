@@ -16,8 +16,8 @@ function trf_fmri_downloadData()
 url1  = 'https://osf.io/fgjp9/?action=download&version=1';
 url2  = 'https://osf.io/wn2q9/?action=download&version=1';
 
-pth1 = fullfile(boldlfp_RootPath, '/files/' , 'trf_modelPrms.mat');
-pth2 = fullfile(boldlfp_RootPath, '/files/' , 'trf_fmriData.mat');
+pth1 = fullfile(temporalfMRIRootPath, '/files/' , 'trf_modelPrms.mat');
+pth2 = fullfile(temporalfMRIRootPath, '/files/' , 'trf_fmriData.mat');
 
 fname1 = websave(pth1, url1);
 fname2 = websave(pth2, url2);
