@@ -15,11 +15,14 @@ function trf_fmri_downloadData()
 
 url1  = 'https://osf.io/fgjp9/?action=download&version=1';
 url2  = 'https://osf.io/wn2q9/?action=download&version=1';
+url3  = 'https://osf.io/2ca3j/?action=download&version=1'; 
 
-pth1 = fullfile(temporalfMRIRootPath, '/files/' , 'trf_modelPrms.mat');
-pth2 = fullfile(temporalfMRIRootPath, '/files/' , 'trf_fmriData.mat');
+pth1 = fullfile(temporalfMRIRootPath, 'files' , 'trf_modelPrms.mat');
+pth2 = fullfile(temporalfMRIRootPath, 'files' , 'trf_fmriData.mat');
+pth3 = fullfile(temporalfMRIRootPath, 'files' , 'temporalExpImages.mat');
 
 fname1 = websave(pth1, url1);
 fname2 = websave(pth2, url2);
+fname3 = websave(pth3, url3);
 
 end
