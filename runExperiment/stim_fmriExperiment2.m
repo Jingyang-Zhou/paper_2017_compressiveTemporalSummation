@@ -9,6 +9,12 @@
 
 % 1 category of images, 12 images in the category
 
+%% PRE-DEFINED VARIABLES OR VARIABLES TO CHANGE
+
+cal = 'CBI_NYU_projector'; % Need to change the calibration file
+
+frameRate = 60; % number of frames per second
+
 %% DEPENDENCIES
 
 % PSYCHTOOLBOX
@@ -37,21 +43,18 @@ for whichRun = 1 : totalNumRuns
     nBlank            = 6;
     
     nTrial            = nTemporalProfile * nTemporalRpt + nBlank;
-
     
     %% PRE-DEFINED STIMULUS PARAMETERS
     
     stimulus = struct('images', [], 'cmap', [], 'seq', [], 'seqtiming', [], ...
         'fixSeq', [], 'srcRect', [], 'destRect', []);
     
-    cal               = 'CBI_NYU_projector';
     d                 = loadDisplayParams(cal);
     stim_size         = min(d.numPixels);
     
     stimulus.srcRect  = [0, 0, stim_size, stim_size];
     stimulus.destRect = [0, 0, stim_size, stim_size];
     
-    frameRate         = 60;
     frameLength       = 1 / frameRate;
     
     % stimulus color

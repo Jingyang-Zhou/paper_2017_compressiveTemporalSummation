@@ -1,4 +1,4 @@
-`% total 262.5 seconds, 4.375 minutes, 175 TRs
+% total 262.5 seconds, 4.375 minutes, 175 TRs
 
 % Initial 8 TRS, 54 trials, each trial 4.5s, 5 TRs at the end
 
