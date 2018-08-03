@@ -149,7 +149,7 @@ for whichRun = 1 : totalNumRuns
     
     figure (1), clf
     subplot(2, 2, 1)
-    stem(seqTiming./60, seq), axis tight
+    stem(seqTiming./frameRate, seq), axis tight
     xlabel('time (s)'), ylabel('image')
     title('stimulus seq and seqtiming'), grid on
     
@@ -250,7 +250,7 @@ for whichRun = 1 : totalNumRuns
     
     figure (2), clf
     
-    stem(fixTiming./60, fixSeq), axis tight
+    stem(fixTiming./frameRate, fixSeq), axis tight
     
     
     %% COMOBINE FIXATION AND STIMULUS SEQUENCE AND TIMING
@@ -289,11 +289,11 @@ for whichRun = 1 : totalNumRuns
     
     figure (3), clf
     subplot(1, 2, 1)
-    stem(stimulus.seqtiming/60, stimulus.seq), axis tight
+    stem(stimulus.seqtiming/frameRate, stimulus.seq), axis tight
     title('seqtming vs stimulus seq')
     
     subplot(1, 2, 2)
-    stem(stimulus.seqtiming/60, stimulus.fixSeq), axis tight
+    stem(stimulus.seqtiming/frameRate, stimulus.fixSeq), axis tight
     title('seqtiming vs fix seq')
     
     %% save files
