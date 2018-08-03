@@ -1,4 +1,7 @@
-load('20160203T113847.mat');
+
+% alternative file to load: '20180716T085603.mat' and '20160203T113847.mat'
+fileNm = fullfile('.','testMatFiles','20180716T085603.mat');
+load(fileNm);
 
 %%
 
