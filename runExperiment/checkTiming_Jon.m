@@ -1,6 +1,10 @@
 
 % alternative file to load: '20180716T085603.mat' and '20160203T113847.mat'
-fileNm = fullfile('.','testMatFiles','20180716T085603.mat');
+fileNm = fullfile('.','testMatFiles','20180716T085603.mat'); % Windows, HU (peter's test)
+fileNm = fullfile('.','testMatFiles','20160203T113847.mat'); % Mac, NYU (for paper)
+%fileNm = fullfile('.','testMatFiles','20180803T154200.mat'); % windows, NYU
+
+
 load(fileNm);
 
 %%
@@ -55,4 +59,12 @@ for ii = 1:length(onsetIdx)
 end
 
 
+%% cummulative error
+figure(3); set(gcf, 'Color', 'w'); clf
+set(gca, 'FontSize', 20); hold on;
+expected = stimulus.seqtiming;
+observed = response.flip - response.flip(1);
+plot(stimulus.seqtiming, expected - observed, 'o-');
+xlabel('Time (s)')
+ylabel('Accumulated error (s)');
 
